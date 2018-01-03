@@ -1,0 +1,131 @@
+
+<div class=" ">
+
+	<div style="background: rgba(104, 125, 140, 0.68)"
+		class="book-appointment ">
+		<h2>BOOK AN APPOINTMENT</h2>
+		<h2>Call PS. Leeanne Mcclelland at 07828807888</h2>
+		<h2>OR</h2>
+		<h2>Fill the below form</h2>
+
+
+	
+
+		<form role="form" name="appointmentform" novalidate>
+			<div class="left-agileits-w3layouts same">
+				<div class="gaps">
+					<p>Patient Name</p>
+					<input type="text" name="PatientName"
+						ng-model="appointment.name" placeholder="" required /> </br> <span
+						style="color: red"
+						ng-show="appointmentform.$submitted ||appointmentform.PatientName.$touched">
+						<span ng-show="appointmentform.PatientName.$error.required">
+							Name is required.</span>
+					</span>
+				</div>
+				<div class="gaps">
+					<p>Phone Number</p>
+					<input type="text" name="Number" ng-model="appointment.phoneNo"
+						placeholder="" required ng-pattern="/^[0-9]{10,10}$/" /> </br> <span
+						style="color: red"
+						ng-show="appointmentform.$submitted ||appointmentform.Number.$touched">
+						<span ng-show="appointmentform.Number.$error.required">
+							phoneNo is required.</span><span
+						ng-show="appointmentform.Number.$error.pattern">Invalid
+							phoneNo.</span>
+					</span>
+				</div>
+				<div class="gaps">
+					<p>Email</p>
+					<input type="email" ng-model="appointment.emailId" name="email"
+						placeholder="" required /> </br> <span style="color: red"
+						ng-show="appointmentform.$submitted || appointmentform.email.$touched">
+						<span ng-show="appointmentform.email.$error.required">Email
+							is required.</span> <span ng-show="appointmentform.email.$error.email">Invalid
+							email address.</span>
+					</span>
+				</div>
+				<div class="gaps">
+					<p>Symptoms</p>
+					<textarea name="About Symptoms" ng-model="appointment.symtoms"
+						placeholder="" required></textarea>
+				</div>
+			</div>
+			<div class="right-agileinfo same">
+
+
+				<div class="gaps">
+					<p>Gender</p>
+					<select style="width: 90%;" name="gender"
+						ng-model="appointment.gender" class="form-control" required>
+						<option></option>
+						<option>Male</option>
+						<option>Female</option>
+					</select> <span style="color: red"
+						ng-show="appointmentform.$submitted ||appointmentform.gender.$touched">
+						<span ng-show="appointmentform.gender.$error.required">
+							Please Specify Your Gender</span>
+					</span>
+
+				</div>
+				<div class="gaps">
+					<p>Preferred Location</p>
+					<select style="width: 90%;" name="preferredLocation"
+						ng-model="appointment.preferredLoc" class="form-control" required>
+						<option></option>
+						<option>The Manor Hospital</option>
+						<option>Three Shires Hospital</option>
+						<option>Northampton General Hospital NHS Trust</option>
+						
+					</select> <span style="color: red"
+						ng-show="appointmentform.$submitted ||appointmentform.preferredLocation.$touched">
+						<span ng-show="appointmentform.preferredLocation.$error.required">
+							Peferred Location is required.</span>
+					</span>
+				</div>
+				<div class="gaps">
+					<p>Preferred Date</p>
+					<input type="text" name="PreferredDate" ng-model="appointment.preferredDate"
+						jqdatepicker required /> </br> <span style="color: red"
+						ng-show="appointmentform.$submitted ||appointmentform.PreferredDate.$touched">
+						<span ng-show="appointmentform.PreferredDate.$error.required">
+							Peferred Date is required.</span>
+					</span>
+				</div>
+				<div class="gaps">
+					<p>Preferred Time</p>
+					<input type="text" name="preferredTime" ng-model="appointment.time"
+						jqtimepicker /> </br> <span style="color: red"
+						ng-show="appointmentform.$submitted ||appointmentform.preferredTime.$touched">
+						<span ng-show="appointmentform.preferredTime.$error.required">
+							Peferred Date is required.</span>
+					</span>
+				</div>
+			</div>
+			<div class="clear"></div>
+
+			<button ng-disabled="appointmentform.$invalid" type="submit"
+				class="btn-lg col-md-offset-5 col-sm-offset-5 bk-appt"
+				ng-click="bookAppointment(appointment)">Book an
+				Appointment</button>
+
+			</br> </br>
+			<div ng-if="isBookSuccessful"
+				class="alert alert-success alert-dismissable col-md-offset-4 col-md-4">
+				<button type="button" class="close" data-dismiss="alert"
+					aria-hidden="true">&times;</button>
+
+				Book Appointment Request Sent Successfully!
+			</div>
+
+			<div ng-if="isBookUnSuccessful"
+				class="alert alert-danger alert-dismissable col-md-offset-4 col-md-4">
+				<button type="button" class="close" data-dismiss="alert"
+					aria-hidden="true">&times;</button>
+
+				Service Unavailable..please call us at 07828807888
+			</div>
+		</form>
+	</div>
+
+</div>

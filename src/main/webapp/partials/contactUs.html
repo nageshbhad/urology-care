@@ -1,0 +1,184 @@
+
+<div 
+	class="book-appointment col-md-offset-1 col-md-10"
+	style="
+    padding-top: 0px">
+	<div class="row ">
+		<div class="col-md-offset-6">
+			<h1 style="color: white;">Visit us at:</h1>
+		</div>
+
+	</div>
+
+
+
+	<div class="row">
+		<div class="col-md-5 " style="padding-left: 0px">
+			<div class="col-md-12 form-box" style="padding-left: 0px">
+				<div class="form-top">
+					<div class="form-top-left">
+						<h3>Contact us</h3>
+						<p style="color: black;">Fill in the form below to send us a
+							message:</p>
+					</div>
+					<div class="form-top-right">
+						<i class="fa fa-envelope"></i>
+					</div>
+				</div>
+				<div class="form-bottom contact-form">
+					<form role="form" name="enquiryForm" novalidate>
+                                <div class="form-group">
+                            <label class="sr-only" for="contact-name">Name</label> <input
+                                type="text" ng-model="enquiry.name" style="color: black"
+                                name="name" placeholder="Name..."
+                                class="contact-email form-control" id="contact-name" ng-blur="validate=true" required>
+
+                            <span style="color: red"
+                                ng-show="enquiryForm.$submitted ||enquiryForm.name.$touched">
+                                <span ng-show="enquiryForm.name.$error.required"> Name is
+                                    required.</span></span>
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="contact-email">Email</label> <input
+                                type="email" ng-model="enquiry.emailId" style="color: black"
+                                name="email" placeholder="Email..."
+                                class="contact-email form-control" id="contact-email" required>
+
+                            <span style="color: red"
+                                ng-show="enquiryForm.$submitted || enquiryForm.email.$touched">
+                                <span ng-show="enquiryForm.email.$error.required">Email
+                                    is required.</span> <span ng-show="enquiryForm.email.$error.email">Invalid
+                                    email address.</span>
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="contact-email">Phone No.</label> <input
+                                type="text" ng-model="enquiry.phoneNo" style="color: black"
+                                name="phoneNo" placeholder="Phone No..."
+                                class="contact-email form-control" id="contact-email" required ng-pattern="/^[0-9]{10,10}$/">
+                               <span style="color: red"
+                                ng-show="enquiryForm.$submitted ||enquiryForm.phoneNo.$touched">
+                                <span ng-show="enquiryForm.phoneNo.$error.required"> phoneNo is
+                                    required.</span><span ng-show="enquiryForm.phoneNo.$error.pattern">Invalid
+                                    phoneNo.</span>
+                                    </span>
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="contact-subject">Subject</label> <input
+                                type="text" style="color: black" name="subject"
+                                placeholder="Subject..." class="contact-subject form-control"
+                                id="contact-subject" required>
+                                <span style="color: red"
+                                ng-show="enquiryForm.$submitted ||enquiryForm.subject.$touched">
+                                <span ng-show="enquiryForm.subject.$error.required"> subject is
+                                    required.</span>
+                                    </span>
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="contact-message">Message</label>
+                            <textarea name="message" ng-model="enquiry.enquiryQuery"
+                                placeholder="Query Message..."
+                                class="contact-message form-control" id="contact-message"
+                                required=""></textarea>
+
+                                 <span style="color: red"
+                                ng-show="enquiryForm.$submitted ||enquiryForm.message.$touched">
+                                <span ng-show="enquiryForm.message.$error.required"> Your query is
+                                    required.</span>
+                                    </span>
+
+                        </div>
+                        <button ng-disabled = "enquiryForm.$invalid"  type="submit" ng-click="createEnquiry(enquiry)"
+                            class="btn">Send Enquiry</button>
+
+                        </br> </br>
+                        <div ng-if="isEnquirySuccessful"
+                            class="alert alert-success alert-dismissable  ">
+                            <button type="button" class="close" data-dismiss="alert"
+                                aria-hidden="true">&times;</button>
+
+                            Enquiry Request Sent Successfully!
+                        </div>
+
+                        <div ng-if="isEnquiryUnSuccessful"
+                            class="alert alert-danger alert-dismissable ">
+                            <button type="button" class="close" data-dismiss="alert"
+                                aria-hidden="true">&times;</button>
+
+                            Something went wrong..please call us at 07828807888
+                        </div>
+
+                                </form>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-7" style="padding-right: 0px">
+
+
+			<div class="row">
+				<div  class="col-md-5">
+					<h4>
+						<strong>The Manor Hospital</strong>
+					</h4>
+					<address>
+
+						Church End, Biddenham,<br> Bedford MK40 4AW,<br> United
+						Kingdon<br> <abbr title="Phone">P:</abbr> +44 1234 364252</br> <a
+							style="color: #d9534f !important;" href="#/appointment">Book
+							Appointment</a>
+					</address>
+
+				</div>
+				<div class="col-md-7" style="padding-right: 0px">
+					<iframe width="100%" height="200" frameborder="0" scrolling="no"
+						marginheight="0" marginwidth="0"
+						src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJfXLskBqxd0gRiPyvq9iXxXg&key=AIzaSyDqSjEkZEwq2s5nZiGZTzoxe84S-p_0wKE"></iframe>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div  class="col-md-5">
+					<h4>
+						<strong>BMI Three Shires Hospital</strong>
+					</h4>
+					<address>
+						The Avenue,<br> Northampton NN1 5BT<br> United Kingdon<br>
+						<abbr title="Phone">P:</abbr> +44 1604 620311</br> <a
+							style="color: #d9534f !important;" href="#/appointment">Book
+							Appointment</a>
+					</address>
+				</div>
+				<div class=" col-md-7" style="padding-right: 0px">
+					<iframe width="100%" height="200" frameborder="0" scrolling="no"
+						marginheight="0" marginwidth="0"
+						src="https://www.google.com/maps/embed/v1/place?q=Northamptonshire%2C%20BMI%20Three%20Shires%20Hospital&key=AIzaSyDqSjEkZEwq2s5nZiGZTzoxe84S-p_0wKE"></iframe>
+				</div>
+			</div>
+
+			<div class="row">
+				<div  class="col-md-5">
+					<h4>
+						<strong>Northampton General Hospital NHS Trust</strong>
+					</h4>
+					<address>
+						Cliftonville,<br> Northampton NN1 5BD<br> United Kingdon<br>
+						<abbr title="Phone">P:</abbr>+44 1604 634700</br> <a
+							style="color: #d9534f !important;" href="#/appointment">Book
+							Appointment</a>
+					</address>
+				</div>
+				<div class=" col-md-7" style="padding-right: 0px">
+					<iframe width="100%" height="200" frameborder="0" scrolling="no"
+						marginheight="0" marginwidth="0"
+						src="https://www.google.com/maps/embed/v1/place?q=Northampton%20general%20hospital&key=AIzaSyDqSjEkZEwq2s5nZiGZTzoxe84S-p_0wKE"></iframe>
+				</div>
+			</div>
+
+
+
+
+		</div>
+
+	</div>
